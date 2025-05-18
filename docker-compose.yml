@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  gramps:
+    image: ghcr.io/gramps-project/grampsweb:latest
+    container_name: gramps
+    restart: always
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./gramps:/data
+    environment:
+      - GRAMPSWEB_USERNAME=${GRAMPSWEB_USERNAME}
+      - GRAMPSWEB_PASSWORD=${GRAMPSWEB_PASSWORD}
+
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./caddy/Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    restart: always
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+
+volumes:
+  caddy_data:
+  caddy_config:
+  
