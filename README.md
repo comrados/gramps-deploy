@@ -142,7 +142,7 @@ Modify `Caddyfile`:
 
 ```
 <yourname>.duckdns.org {
-    reverse_proxy gramps:5000
+    reverse_proxy http://gramps:5000
 }
 ```
 
@@ -199,7 +199,7 @@ Add to `Caddyfile`:
 
 ```
 <yourname>.duckdns.org {
-  reverse_proxy gramps:5000
+  reverse_proxy http://gramps:5000
   basicauth {
     alice <hashed_password>
     bob   <hashed_password>
