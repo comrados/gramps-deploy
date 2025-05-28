@@ -25,12 +25,16 @@ services:
       - caddy_data:/data
       - caddy_config:/config
 
-  watchtower:
-    image: containrrr/watchtower
-    container_name: watchtower
-    restart: always
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
+  # watchtower:
+  #   image: containrrr/watchtower
+  #   container_name: watchtower
+  #   restart: always
+  #   volumes:
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   environment:
+  #     - WATCHTOWER_CLEANUP=true
+  #     - TZ=Europe/Moscow
+  #   command: --schedule "0 5 * * *"
 
 volumes:
   caddy_data:
