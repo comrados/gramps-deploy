@@ -12,7 +12,7 @@ services:
     environment:
       - GRAMPSWEB_USERNAME=${GRAMPSWEB_USERNAME}
       - GRAMPSWEB_PASSWORD=${GRAMPSWEB_PASSWORD}
-      - GRAMPSWEB_TREE=example.gramps
+      - GRAMPSWEB_TREE=${GRAMPSWEB_TREE}
 
   caddy:
     image: caddy:latest
@@ -25,7 +25,6 @@ services:
       - ./caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
-
   # watchtower:
   #   image: containrrr/watchtower
   #   container_name: watchtower
@@ -40,4 +39,5 @@ services:
 volumes:
   caddy_data:
   caddy_config:
-  
+
+
