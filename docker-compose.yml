@@ -8,7 +8,13 @@ services:
     ports:
       - "5000:5000"
     volumes:
-      - ./data/grampsdb:/root/.gramps/grampsdb
+      - ./data/gramps:/root/.gramps
+      - ./data/users:/app/users
+      - ./data/indexdir:/app/indexdir
+      - ./data/media:/app/media
+      - ./data/config:/app/config
+      - ./data/secret:/app/secret
+      - ./data/persist:/app/persist
     environment:
       - GRAMPSWEB_USERNAME=${GRAMPSWEB_USERNAME}
       - GRAMPSWEB_PASSWORD=${GRAMPSWEB_PASSWORD}
