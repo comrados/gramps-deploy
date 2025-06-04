@@ -12,7 +12,7 @@ services:
     environment:
       - GRAMPSWEB_USERNAME=${GRAMPSWEB_USERNAME}
       - GRAMPSWEB_PASSWORD=${GRAMPSWEB_PASSWORD}
-      - TREE=example.gramps
+      - GRAMPSWEB_TREE=example.gramps
 
   caddy:
     image: caddy:latest
