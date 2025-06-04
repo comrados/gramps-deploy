@@ -12,7 +12,6 @@ services:
       - ./data/users:/app/users
       - ./data/indexdir:/app/indexdir
       - ./data/media:/app/media
-      - ./data/config:/app/config
       - ./data/secret:/app/secret
       - ./data/persist:/app/persist
     environment:
